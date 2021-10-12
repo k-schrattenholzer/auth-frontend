@@ -31,4 +31,19 @@ export async function addTask(task, token) {
     return response.body;
 }
 //login
+export async function userSignUp(email, password) {
+    const response = await request
+    .post(`${URL}/auth/signup`)
+    .send({ email, password })
+
+    return response.body;
+}
+
 //signup
+export async function userLogin(email, password) {
+    const response = await request
+    .post(`${URL}/auth/signin`)
+    .send({ email, password })
+
+    return response.body;
+}

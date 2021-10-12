@@ -49,8 +49,12 @@ export default class App extends Component {
             <NavLink
               className="NavLink"
               exact activeClassName='active-link' to='/tasklist'>my to-do list</NavLink>
+            {this.state.token && <button 
+                                  onClick={this.logout}
+                                  className="NavLink LogoutButton"
+                                  >LOGOUT</button>}
           </header>
-          <div className="Content'"> 
+          <div exact className="ContentDiv"> 
             <Switch>
                 <Route
                       path="/"
