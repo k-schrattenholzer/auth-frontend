@@ -62,7 +62,8 @@ export default class App extends Component {
                   />
                 <Route
                       path="/signup"
-                      exact render={(routerProps) => <SignUpPage {...routerProps}/>}
+                      exact render={(routerProps) => <SignUpPage
+                          handleTokenChange={this.handleTokenChange} {...routerProps}/>}
                   />
                 <Route
                       path="/login"

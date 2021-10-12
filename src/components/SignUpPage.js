@@ -12,9 +12,11 @@ export default class SignUpPage extends Component {
     handleSubmit = async e => {
         e.preventDefault();
 
-        const response = await userSignUp(this.state.email, this.state.password);
+        const { token } = await userSignUp(this.state.email, this.state.password)
 
-        console.log(response)
+        this.props.handleTokenChange(token);
+
+        this.props.history.push('/tasklist');
     }
 
     render() {
