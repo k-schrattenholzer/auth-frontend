@@ -4,18 +4,35 @@ import {
   Switch,
   Route,
   Link,
-  NavLink
+  NavLink,
+  Redirect
 } from "react-router-dom";
+
 import './App.css';
 import HomePage from './components/HomePage.js';
 import LoginPage from './components/LoginPage.js';
 import SignUpPage from './components/SignUpPage.js';
 import TaskPage from './components/TaskPage.js';
 
+const TOKEN_KEY = 'TOKEN'
 
 export default class App extends Component {
-  render()
-    {
+
+  state = {
+    token: localStorage.getItem(TOKEN_KEY) || ''
+  }
+
+  handleTokenChange = token => {
+    localStorage.setItem(TOKEN_KEY, token)
+    this.setState({ token: token })
+  }
+
+  handleLogout = () => {
+    localStorage.clear()
+    this.setState({ token: '' })
+  }
+
+  render() {
       return (
       <div className="Container">
         <Router>
@@ -49,7 +66,13 @@ export default class App extends Component {
                   />
                 <Route
                       path="/tasklist"
-                      exact render={(routerProps) => <TaskPage {...routerProps}/>}
+                      exact render={(routerProps) =>
+                        this.state.token
+                          ? <TaskPage
+                            token={this.state.token}
+                            {...routerProps}/>
+                          : <Redirect to="/signup"/>
+                        }
                   />
             </Switch>
           </div>
