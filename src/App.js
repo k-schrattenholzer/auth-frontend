@@ -50,7 +50,7 @@ export default class App extends Component {
                                   className="NavLink LogoutButton"
                                   >LOGOUT</button>}
           </header>
-          <div className="ContentDiv"> 
+          <div exact className="ContentDiv"> 
             <Switch>
                 <Route
                       path="/"

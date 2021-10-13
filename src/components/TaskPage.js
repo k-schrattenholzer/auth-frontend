@@ -31,7 +31,12 @@ export default class TaskPage extends Component {
 
         console.log(this.state.tasks)
         return (
-            <div>
+            <div className='TaskListContainer'>
+                <span className="instructions">
+                    <p>add to do list items as needed</p>
+                    <p>when the task is done, click it to mark it as completed</p>
+                    <p>if you need to - you can also click a completed task to mark it as incomplete</p>
+                </span>
                 <form
                     onSubmit={this.handleSubmit}>
                     <input
@@ -39,7 +44,7 @@ export default class TaskPage extends Component {
                         onChange={e => this.setState({ description: e.target.value })}></input>
                         <button>Add Task</button>
                 </form>
-                <div>
+                <div className='TaskList'>
                     {tasks
                     .map(({ id, status, description }) => <div
                     key={id}
@@ -48,7 +53,7 @@ export default class TaskPage extends Component {
                         const fetchedList = await getTaskList(token)
                         this.setState({ tasks: fetchedList })
                         }}
-                        className={status ? 'complete' : 'incomplete'}>
+                        className={status ? 'complete taskEl' : 'incomplete taskEl'}>
                             {description}</div>)}
                 </div>
             </div>

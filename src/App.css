@@ -43,7 +43,7 @@ header {
 }
 
 .active-link {
-  background-color: var(--color8);
+  background-color: var(--color10);
 }
 
 .NavLink {
@@ -85,17 +85,59 @@ form >* {
   margin: 1em;
 }
 
+.TaskListContainer {
+  width: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  transition: all 1s ease-in-out;
+  justify-items: center;
+  align-items: center;
+}
+
+.instructions {
+  font-size: .75em;
+  background-color: #D3C5B2;
+  padding: 2em;
+  border-radius: 2em;
+}
+
+.TaskList {
+  grid-column: 2;
+}
+
+.taskEl {
+  margin: .25em;
+  padding: .5em;
+  border-radius: 2em;
+}
+
+.taskEl:hover {
+  cursor: pointer;
+  border: 1px solid var(--color9);
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color7),
+    var(--color7) 5px,
+    var(--color8) 5px,
+    var(--color8) 10px
+  );
+}
+
 .incomplete {
-  background-color: red;
+  color: var(--textcolor1);
 }
 
 .complete {
-  color: white;
+  color: var(--color10);
   background: repeating-linear-gradient(
     45deg,
-    #606dbc,
-    #606dbc 10px,
-    #465298 10px,
-    #465298 20px
+    var(--color7),
+    var(--color7) 5px,
+    var(--color8) 5px,
+    var(--color8) 10px
   );
 }
+
+/* Start https://www.cursors-4u.com */ 
+* {cursor: url(https://cur.cursors-4u.net/holidays/hol-4/hol321.cur), auto !important;} /* End https://www.cursors-4u.com */
