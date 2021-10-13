@@ -120,10 +120,12 @@ form >* {
   border-radius: 2em;
   width: auto;
   transition: all .115s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .instructions:hover {
 transform:scale(105%);
+cursor: url(https://cur.cursors-4u.net/cursors/cur-3/cur283.ani), url(https://cur.cursors-4u.net/cursors/cur-3/cur283.png), auto !important;
 }
 
 .TaskList {
@@ -134,6 +136,7 @@ transform:scale(105%);
   margin: .25em;
   padding: .5em;
   border-radius: 2em;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 }
 
 .taskEl:hover {
@@ -197,3 +200,7 @@ input {
   border: hidden;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
+
+/* Start https://www.cursors-4u.com */ 
+/* * {}  */
+/* End https://www.cursors-4u.com */
