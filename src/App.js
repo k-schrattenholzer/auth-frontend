@@ -45,10 +45,11 @@ export default class App extends Component {
             {this.state.token && <NavLink
               className="NavLink"
               exact activeClassName='active-link' to='/tasklist'>my to-do list</NavLink>}
-            {this.state.token && <button 
+            {this.state.token && <a 
                                   onClick={this.handleLogout}
                                   className="NavLink LogoutButton"
-                                  >LOGOUT</button>}
+                                  href="/"
+                                  >LOGOUT</a>}
           </header>
           <div exact className="ContentDiv"> 
             <Switch>

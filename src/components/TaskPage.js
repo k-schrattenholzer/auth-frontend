@@ -33,17 +33,21 @@ export default class TaskPage extends Component {
         return (
             <div className='TaskListContainer'>
                 <span className="instructions">
-                    <p>add to do list items as needed</p>
-                    <p>when the task is done, click it to mark it as completed</p>
-                    <p>if you need to - you can also click a completed task to mark it as incomplete</p>
+                    <ul>
+                        <li>add your to-do's to the list</li>
+                        <li>when done, click to mark as completed</li>
+                        <li>click a completed task to mark as incomplete</li>
+                    </ul>
                 </span>
-                <form
-                    onSubmit={this.handleSubmit}>
-                    <input
-                        value={description}
-                        onChange={e => this.setState({ description: e.target.value })}></input>
-                        <button>Add Task</button>
-                </form>
+                <span className="TaskAddContainer">
+                    <form
+                        onSubmit={this.handleSubmit}>
+                        <input
+                            value={description}
+                            onChange={e => this.setState({ description: e.target.value })}></input>
+                            <button>Add Task</button>
+                    </form>
+                </span>
                 <div className='TaskList'>
                     {tasks
                     .map(({ id, status, description }) => <div

@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&display=swap'); */
 
 :root{
   --color1: #cb997eff;
@@ -6,15 +7,16 @@
   --color3: #ddbea9ff;
   --color4: #eed3c0ff;
   --color5: #ffe8d6ff;
+  --color51: rgba(253, 236, 223, 0.89);
   --color6: #dbd0bdff;
   --color7: #b7b7a4ff;
   --color8: #a5a58dff;
   --color9: #888b75ff;
   --color10: #6b705cff;  
   --textcolor1: #2B2D25;  
-  --font: 'Shrikhand', cursive;
+  --font: 'Corben', cursive;
+  /* --font: 'Elsie', cursive; */
 }
-
 
 body {
   font-family: var(--font);
@@ -34,7 +36,6 @@ header {
 
 }
 
-
 .Container {
   display:flex;
   flex-direction: column;
@@ -48,7 +49,8 @@ header {
 
 .NavLink {
   border: 1px solid black;
-  font-size: 1rem;
+  font-size: .7rem;
+  font-weight: bold;
   padding: 0rem 1rem;
   border-radius: 2rem;
   background-color: var(--color6);
@@ -74,15 +76,21 @@ header {
 form {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
+  align-items: center;
   background-color: var(--color3);
   padding: 1em;
   border-radius: 2em;
-  width: fit-content;
+  width: auto;
+  height: fit-content;
+  justify-content: space-around;
 }
 
 form >* {
   margin: 1em;
+}
+
+.TaskAddContainer {
+  width: 100%;
 }
 
 .TaskListContainer {
@@ -95,15 +103,23 @@ form >* {
   align-items: center;
 }
 
+.TaskListContainer >*{
+  margin: 5%;
+}
+
 .instructions {
-  font-size: .75em;
+  font-size: .6em;
+  font-weight: bolder;
+  letter-spacing: .25em;
   background-color: #D3C5B2;
-  padding: 2em;
+  border: 1em double black;
+  padding: 1em;
   border-radius: 2em;
+  width: auto;
 }
 
 .TaskList {
-  grid-column: 2;
+  grid-column: 2; 
 }
 
 .taskEl {
@@ -122,6 +138,7 @@ form >* {
     var(--color8) 5px,
     var(--color8) 10px
   );
+  cursor: url(https://cur.cursors-4u.net/symbols/sym-1/sym57.cur), auto !important;
 }
 
 .incomplete {
@@ -139,5 +156,32 @@ form >* {
   );
 }
 
-/* Start https://www.cursors-4u.com */ 
-* {cursor: url(https://cur.cursors-4u.net/holidays/hol-4/hol321.cur), auto !important;} /* End https://www.cursors-4u.com */
+.complete:hover {
+  color: var(--textcolor1);
+  background: var(--color1);
+  border: none;
+}
+
+button {
+  font-family: var(--font);
+  font-weight: bold;
+  font-size: .5em;
+  text-transform: lowercase;
+  background-color: var(--color4);
+  border-radius: 2em;
+  white-space: nowrap;
+  text-align: center;
+  padding: 3%;
+  height: fit-content;
+}
+
+input {
+  font-family: var(--font);
+  padding: 5%;
+  background-color: var(--color51);
+  border-radius: 2em;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+}
