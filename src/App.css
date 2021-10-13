@@ -60,7 +60,8 @@ header {
 }
 
 .NavLink:hover {
-    background-color: var(--color7);
+  background-color: var(--color7);
+  cursor: url(https://cur.cursors-4u.net/symbols/sym-1/sym57.cur), auto !important;
 }
 
 .ContentDiv {
@@ -129,7 +130,6 @@ form >* {
 }
 
 .taskEl:hover {
-  cursor: pointer;
   border: 1px solid var(--color9);
   background: repeating-linear-gradient(
     45deg,
