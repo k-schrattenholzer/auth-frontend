@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { userSignUp } from '../fetch-utils.js'
 
 export default class SignUpPage extends Component {

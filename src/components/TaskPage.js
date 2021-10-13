@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { addTask, getTaskList } from '../fetch-utils.js'
+import { addTask, completeTask, getTaskList } from '../fetch-utils.js'
 
 export default class TaskPage extends Component {
     state={
@@ -27,6 +27,7 @@ export default class TaskPage extends Component {
     }
     render() {
         const { description, tasks } = this.state;
+        const { token } = this.props;
 
         console.log(this.state.tasks)
         return (
@@ -40,7 +41,16 @@ export default class TaskPage extends Component {
                 </form>
                 <div>
                     {tasks
-                    .map(task => <div>{task.description}</div>)}
+                    .map(({ id, status, task }) => <div
+                    key={id}
+                    onClick={async() => {
+                        await completeTask( id, !status, token)
+                        const fetchedList = await getTaskList(token)
+
+                        this.setState({ tasks: fetchedList })
+                        }}
+                        className={status ? 'complete' : 'incomplete'}>
+                            {task}</div>)}
                 </div>
             </div>
         )
