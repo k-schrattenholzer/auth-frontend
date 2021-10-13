@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { userLogin } from '../fetch-utils.js'
 
 export default class LoginPage extends Component {
@@ -39,7 +40,7 @@ export default class LoginPage extends Component {
                     </label>
                     <button>login</button>
                 </form>
-
+                <Link to='/signup'>first time here? click to signup</Link>
             </div>
         )
     }

@@ -40,7 +40,6 @@ export default class SignUpPage extends Component {
                     </label>
                     <button>sign up</button>
                 </form>
-                <Link to='/login'>already have an account? login</Link>
             </div>
         )
     }

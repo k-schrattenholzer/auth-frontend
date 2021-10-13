@@ -36,18 +36,15 @@ export default class App extends Component {
       <div className="Container">
         <Router>
           <header>
-            <NavLink
+            {this.state.token && <NavLink
               className="NavLink"
-              exact activeClassName='active-link' to='/'>home</NavLink>
-            <NavLink
+              exact activeClassName='active-link' to='/'>home</NavLink>}
+            {!this.state.token && <NavLink
               className="NavLink"
-              exact activeClassName='active-link' to='/signup'>sign up</NavLink>
-            <NavLink
+              exact activeClassName='active-link' to='/login'>login</NavLink>}
+            {this.state.token && <NavLink
               className="NavLink"
-              exact activeClassName='active-link' to='/login'>login</NavLink>
-            <NavLink
-              className="NavLink"
-              exact activeClassName='active-link' to='/tasklist'>my to-do list</NavLink>
+              exact activeClassName='active-link' to='/tasklist'>my to-do list</NavLink>}
             {this.state.token && <button 
                                   onClick={this.handleLogout}
                                   className="NavLink LogoutButton"
