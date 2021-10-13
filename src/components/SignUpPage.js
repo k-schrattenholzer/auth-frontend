@@ -23,6 +23,7 @@ export default class SignUpPage extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
+                    <h3>sign-up</h3>
                     <label>
                         email:
                         <input 

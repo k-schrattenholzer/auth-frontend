@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   NavLink,
   Redirect
 } from "react-router-dom";
@@ -50,7 +49,7 @@ export default class App extends Component {
               className="NavLink"
               exact activeClassName='active-link' to='/tasklist'>my to-do list</NavLink>
             {this.state.token && <button 
-                                  onClick={this.logout}
+                                  onClick={this.handleLogout}
                                   className="NavLink LogoutButton"
                                   >LOGOUT</button>}
           </header>
@@ -67,7 +66,8 @@ export default class App extends Component {
                   />
                 <Route
                       path="/login"
-                      exact render={(routerProps) => <LoginPage {...routerProps}/>}
+                      exact render={(routerProps) => <LoginPage
+                                                      handleTokenChange = {this.handleTokenChange} {...routerProps}/>}
                   />
                 <Route
                       path="/tasklist"
@@ -76,7 +76,7 @@ export default class App extends Component {
                           ? <TaskPage
                             token={this.state.token}
                             {...routerProps}/>
-                          : <Redirect to="/signup"/>
+                          : <Redirect to="/login"/>
                         }
                   />
             </Switch>
