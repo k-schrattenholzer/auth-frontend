@@ -33,7 +33,7 @@ header {
   width: 100%;
   padding: .7em;
   margin-bottom: 1em;
-
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .Container {
@@ -57,6 +57,7 @@ header {
   font-family: var(--font);
   color: var(--color5lightest);
   text-decoration: none;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .NavLink:hover {
@@ -84,6 +85,7 @@ form {
   width: auto;
   height: fit-content;
   justify-content: space-around;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 form >* {
@@ -117,6 +119,11 @@ form >* {
   padding: 1em;
   border-radius: 2em;
   width: auto;
+  transition: all .115s ease-in-out;
+}
+
+.instructions:hover {
+transform:scale(105%);
 }
 
 .TaskList {
@@ -169,19 +176,24 @@ button {
   text-transform: lowercase;
   background-color: var(--color4);
   border-radius: 2em;
+  border: hidden;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   white-space: nowrap;
   text-align: center;
   padding: 3%;
   height: fit-content;
 }
 
+button:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
 input {
   font-family: var(--font);
+  font-size: .5em;
   padding: 5%;
   background-color: var(--color51);
   border-radius: 2em;
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: groove;
+  border: hidden;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
