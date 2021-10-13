@@ -27,7 +27,6 @@ export default class TaskPage extends Component {
     }
     render() {
         const { description, tasks } = this.state;
-        const { token } = this.props;
 
         console.log(this.state.tasks)
         return (
