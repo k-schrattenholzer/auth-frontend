@@ -41,16 +41,15 @@ export default class TaskPage extends Component {
                 </form>
                 <div>
                     {tasks
-                    .map(({ id, status, task }) => <div
+                    .map(({ id, status, description }) => <div
                     key={id}
                     onClick={async() => {
                         await completeTask( id, !status, token)
                         const fetchedList = await getTaskList(token)
-
                         this.setState({ tasks: fetchedList })
                         }}
                         className={status ? 'complete' : 'incomplete'}>
-                            {task}</div>)}
+                            {description}</div>)}
                 </div>
             </div>
         )
